@@ -13,34 +13,71 @@
       "
       max-width="700"
     >
-      <v-row>
-        <v-col cols="12" md="8" xl="8">
-            <v-icon> mdi-twitter </v-icon>
-          <v-card-title style="color: red; font-size: 1.4rem">
-            <b style="white-space: pre-wrap; word-break: break-word !important">{{
-              nombre
-            }}</b>
-          </v-card-title>
-          <v-card-subtitle style="padding: 0rem; margin-top: 0.3rem"
-            ><b
-              style="
-                white-space: pre-wrap;
-                word-break: break-word !important;
-                color: #d2d3c9;
-                text-align: left;
-                font-size: 1.1rem;
-              "
-              >{{ descripcion }}</b
-            >
-          </v-card-subtitle>
-         
-        </v-col>
-       
-      </v-row>
-
+      <div style="background-color: white">
+        <v-row>
+          <v-col cols="12" md="8" xl="8">
+            <v-icon large style="float: left; margin-left: 1.5rem">
+              mdi-bookmark-outline
+            </v-icon>
+            <br />
+            <v-card-title style="color: rgb(127, 142, 173); font-size: 1.4rem">
+              <b style="white-space: pre-wrap; word-break: break-word !important">{{
+                nombre
+              }}</b>
+            </v-card-title>
+          </v-col>
+          <v-col cols="12" md="4" xl="4">
+            <img
+              height="75px"
+              width="75px"
+              src="https://cdn.worldvectorlogo.com/logos/imss-1.svg"
+            />
+          </v-col>
+        </v-row>
+      </div>
       <div
-        style="margin-left: 1rem; margin-right: 1rem; margin-bottom: 0.2rem; width: 90%"
-      ></div>
+        style="margin-left: 1rem; margin-right: 1rem; margin-bottom: 0.2rem; width: 90%, height:15rem;"
+      >
+        <v-row>
+          <div style="background-color: #d9d9d9; margin-top: 2rem">
+            <v-card-subtitle style="padding: 0rem; padding-top: 0.5rem"
+              ><b
+                style="
+                  white-space: pre-wrap;
+                  word-break: break-word !important;
+                  color: black;
+                  text-align: left;
+                  font-size: 1.1rem;
+                "
+                >Descripcion: {{ descripcion }}</b
+              >
+            </v-card-subtitle>
+          </div>
+          <v-col cols="12" md="6" xl="6">
+            <div>
+              <b
+                style="
+                  white-space: pre-wrap;
+                  word-break: break-word !important;
+                  color: white;
+                  float: left;
+                  font-size: 1.1rem;
+                "
+                >ID: {{ id }} <br />
+                Tiempo Restante: {{ tiempo_restante }}
+              </b>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" xl="6">
+            <v-btn color="#D9D9D9" rounded style="margin-bottom: 0.5rem; width: 15rem; color:#7F8EAD;"> VER </v-btn>
+            <br />
+            <v-btn color="#D9D9D9" rounded style="margin-top: 0.5rem; width: 15rem; color:#7F8EAD;"
+              ><v-icon large dark style="margin-right: 0.5rem;">mdi-note-text</v-icon> ANALISIS
+            </v-btn>
+          </v-col>
+        </v-row>
+      </div>
+
       <br />
       <v-spacer></v-spacer>
     </v-card>
@@ -54,13 +91,21 @@ export default {
     id: Number,
     tiempo_restante: String,
   },
-  data() {},
+  data() {
+      return    {
+
+      }
+  },
 };
 </script>
 <style>
 .blue-grad {
   background: rgb(127, 142, 173);
-  background: linear-gradient(90deg, rgba(127, 142, 173, 1) 0%, rgba(8, 98, 95, 1) 80%);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 142, 173, 1) 0%,
+    rgba(127, 142, 173, 1) 80%
+  );
 }
 .on-hover2 {
   color: red !important;

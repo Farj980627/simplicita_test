@@ -1,10 +1,25 @@
 <template>
   <v-app id="backGND">
-    <NBar />
-    <v-card
-      
-      style="padding-left: 2rem; background-color: transparent"
-    >
+    <!--Un navBar arriba de la pagina -->
+    <div style="padding-top: 1.5rem">
+      <v-app-bar app color="#86648D" dark>
+        <v-btn @click="flag = !flag" large color="#7F8EAD" style="margin-right: 0.5rem">
+          Vigentes</v-btn
+        >
+        <v-btn @click="flag = !flag" large color="#9BA7BF">Historico</v-btn>
+
+        <v-spacer />
+        <span>1/20 Oportunidades </span>
+        <v-spacer />
+        <v-select v-model="itemMod" :items="itemList">
+          <template v-slot:selection="{ item }">
+            <span style="color: black; text-align: center; width: 100%">{{ item }}</span>
+          </template>
+        </v-select>
+      </v-app-bar>
+    </div>
+
+    <v-card style="padding-left: 2rem; background-color: transparent">
       <v-row no-gutters>
         <v-col
           cols="12"
@@ -14,39 +29,54 @@
           v-for="item in APIarray"
           :key="item.id_simplicita"
         >
+          <!--Rendeerizado de VIGENTES-->
           <Card
+            v-if="!flag"
             :nombre="item.institucion"
             :descripcion="item.desc_exp"
             :id="item.id_simplicita"
             :tiempo_restante="item.plazo"
           ></Card>
+          <!--Rendeerizado de HISTORICO -->
+          <Card2
+            v-else
+            :nombre="item.institucion"
+            :descripcion="item.desc_exp"
+            :id="item.id_simplicita"
+            :tiempo_restante="item.plazo"
+          ></Card2>
         </v-col>
       </v-row>
     </v-card>
   </v-app>
 </template>
 <script>
-import NBar from "@/components/navbar";
 import Card from "@/components/card";
+import Card2 from "@/components/card2";
+
 export default {
-  components: { NBar, Card },
+  components: { Card, Card2 },
+
   data() {
     return {
       APIarray: [],
+      flag: true,
+      itemMod: "Ordenar por: Plazo Descendente",
+      itemList: ["Ordenar por: Plazo Descendente", "Ordenar por: Plazo Ascendente"],
     };
   },
   methods: {},
-  mounted: async function () {
+  created: async function () {
+    this.flag = false;
     await fetch("https://simplicita.tk:8000/buscar/medicina")
       .then((response) => response.json())
-      .then((data) => 
-        data.forEach(element => {
-            this.APIarray.push(element);
+      .then((data) =>
+        data.forEach((element) => {
+          this.APIarray.push(element);
         })
       );
 
-      console.log("APIARRAY", this.APIarray);
-      
+    console.log("APIARRAY", this.APIarray);
   },
 };
 </script>

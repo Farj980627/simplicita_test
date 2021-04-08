@@ -1,4 +1,4 @@
-
+import '@mdi/font/css/materialdesignicons.css'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
@@ -11,7 +11,7 @@ export default new Vuetify({
       
     },
     theme: {
-        primary: "#0E918C",
+        primary: "#7F8EAD",
         secondary:"#D2D3C9",
         naranja: "#f6830f",
         rojo: "#BB2205"
