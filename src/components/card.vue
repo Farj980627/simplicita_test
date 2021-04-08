@@ -69,9 +69,9 @@
             </div>
           </v-col>
           <v-col cols="12" md="6" xl="6">
-            <v-btn color="#D9D9D9" rounded style="margin-bottom: 0.5rem; width: 15rem; color:#7F8EAD;"> VER </v-btn>
+            <v-btn color="#D9D9D9" rounded style="margin-bottom: 0.5rem; width: auto; color:#7F8EAD;"> VER </v-btn>
             <br />
-            <v-btn color="#D9D9D9" rounded style="margin-top: 0.5rem; width: 15rem; color:#7F8EAD;"
+            <v-btn color="#D9D9D9" rounded style="margin-top: 0.5rem; width: auto; color:#7F8EAD;"
               ><v-icon large dark style="margin-right: 0.5rem;">mdi-note-text</v-icon> ANALISIS
             </v-btn>
           </v-col>

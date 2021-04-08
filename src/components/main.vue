@@ -23,9 +23,9 @@
       <v-row no-gutters>
         <v-col
           cols="12"
-          md="6"
-          xl="6"
-          sm="6"
+          md="4"
+          xl="4"
+          sm="4"
           v-for="item in APIarray"
           :key="item.id_simplicita"
         >
@@ -60,23 +60,28 @@ export default {
   data() {
     return {
       APIarray: [],
-      flag: true,
+      flag: false,
       itemMod: "Ordenar por: Plazo Descendente",
       itemList: ["Ordenar por: Plazo Descendente", "Ordenar por: Plazo Ascendente"],
     };
   },
   methods: {},
+  //Metodo para traer la informacion del API, en este caso solo se extraen los primeros 6 resultados por temas de rapidez
+  // sin embargo esta comentado el ciclo en caso de querer extraer todos los resultados que arroja el API
   created: async function () {
-    this.flag = false;
+    
     await fetch("https://simplicita.tk:8000/buscar/medicina")
       .then((response) => response.json())
-      .then((data) =>
-        data.forEach((element) => {
+      .then((data) => {
+        for (var i = 0; i < 6; i++) {
+          this.APIarray.push(data[i]);
+        }
+        /*data.forEach((element) => {
           this.APIarray.push(element);
-        })
-      );
+        })*/
+      });
 
-    console.log("APIARRAY", this.APIarray);
+    
   },
 };
 </script>
