@@ -9,7 +9,7 @@
         <v-btn @click="flag = !flag" large color="#9BA7BF">Historico</v-btn>
 
         <v-spacer />
-        <span>1/20 Oportunidades </span>
+        <span>1/200 Oportunidades </span>
         <v-spacer />
         <v-select v-model="itemMod" :items="itemList">
           <template v-slot:selection="{ item }">
