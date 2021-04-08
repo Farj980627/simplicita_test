@@ -13,7 +13,9 @@
         <v-spacer />
         <v-select v-model="itemMod" :items="itemList">
           <template v-slot:selection="{ item }">
-            <span style="color: black; text-align: center; width: 100%">{{ item }}</span>
+            <span style="color: white; text-align: center; width: 100%">{{
+              item
+            }}</span>
           </template>
         </v-select>
       </v-app-bar>
@@ -69,7 +71,6 @@ export default {
   //Metodo para traer la informacion del API, en este caso solo se extraen los primeros 6 resultados por temas de rapidez
   // sin embargo esta comentado el ciclo en caso de querer extraer todos los resultados que arroja el API
   created: async function () {
-    
     await fetch("https://simplicita.tk:8000/buscar/medicina")
       .then((response) => response.json())
       .then((data) => {
@@ -80,8 +81,6 @@ export default {
           this.APIarray.push(element);
         })*/
       });
-
-    
   },
 };
 </script>
