@@ -85,12 +85,12 @@
              
           </div>
          
-         <v-spacer/>
-          <div>
+         
+          <div >
             <v-btn
               color="#D9D9D9"
               rounded
-              style="margin-bottom: 0.5rem; width: auto; color: #6b5070"
+              style="margin-top:2rem;margin-bottom: 0.5rem; width: auto; color: #6b5070"
             >
               VER
             </v-btn>
