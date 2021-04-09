@@ -79,6 +79,7 @@
                 color: white;
                 text-align: left;
                 font-size: 0.9rem;
+                padding-bottoem: 2rem;
               "
               >Tiempo Restante: {{ tiempo_restante }}</b
             >
