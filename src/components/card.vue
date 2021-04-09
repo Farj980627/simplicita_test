@@ -52,7 +52,7 @@
                   text-align: left;
                   font-size: 1.1rem;
                 "
-                >Descripcion: {{ descripcion }}</b
+                >Descripción: {{ descripcion }}</b
               >
             </v-card-subtitle>
           </div>
@@ -85,7 +85,7 @@
               rounded
               style="margin-top: 0.5rem; width: auto; color: #7f8ead"
               ><v-icon large dark style="margin-right: 0.5rem">mdi-note-text</v-icon>
-              ANALISIS
+              ANáLISIS
             </v-btn>
           </v-col>
         </v-row>

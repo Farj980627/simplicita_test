@@ -66,7 +66,7 @@
                 text-align: left;
                 font-size: 1rem;
               "
-              >Descripcion: {{ descripcion }}</b
+              >Descripción: {{ descripcion }}</b
             >
           </div>
           <br />
@@ -101,7 +101,7 @@
               rounded
               style="margin-top: 0.5rem; width: auto; color: #6b5070"
               ><v-icon large dark style="margin-right: 0.5rem">mdi-note-text</v-icon>
-              ANALISIS
+              ANáLISIS
             </v-btn>
           </div>
         </v-col>

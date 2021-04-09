@@ -7,8 +7,7 @@
         <v-btn @click="flag = false" large color="#7F8EAD" style="margin-right: 0.5rem">
           Vigentes</v-btn
         >
-        <v-btn @click="flag = true" large color="#9BA7BF">Historico</v-btn>
-
+        <v-btn @click="flag = true" large color="#9BA7BF">Histórico</v-btn>
         <v-spacer />
         <span >1/200 Oportunidades </span>
         <v-spacer />
