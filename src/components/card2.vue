@@ -4,13 +4,14 @@
       elevation="25"
       :class="{ 'on-hover2': hover }"
       class="blue-grad"
-      style="margin: 1rem;
-        border-top-left-radius: 2.5rem; 
+      style="
+        margin: 1rem;
+        border-top-left-radius: 2.5rem;
         border-top-right-radius: 5rem;
         border-bottom-left-radius: 2.5rem;
         border-bottom-right-radius: 5rem;
-        margin-bottom:2rem;
-        "
+        margin-bottom: 2rem;
+      "
       max-width="700"
     >
       <v-row>
@@ -49,7 +50,6 @@
               >
             </v-card-subtitle>
           </div>
-         
         </v-col>
         <v-col style="padding: 2rem; padding-right: 2.5rem" cols="12" md="6" xl="6">
           <v-icon large style="float: right; margin-left: 1.5rem">
@@ -59,11 +59,12 @@
           <div>
             <b
               style="
+                float: left;
                 white-space: pre-wrap;
                 word-break: break-word !important;
                 color: white;
                 text-align: left;
-                font-size: 1.1rem;
+                font-size: 1rem;
               "
               >Descripcion: {{ descripcion }}</b
             >
@@ -72,6 +73,7 @@
           <div>
             <b
               style="
+               float: left;
                 white-space: pre-wrap;
                 word-break: break-word !important;
                 color: white;
@@ -86,7 +88,7 @@
             <v-btn
               color="#D9D9D9"
               rounded
-              style="margin-bottom: 0.5rem; width: auto; color: #6B5070"
+              style="margin-bottom: 0.5rem; width: auto; color: #6b5070"
             >
               VER
             </v-btn>
@@ -94,7 +96,7 @@
             <v-btn
               color="#D9D9D9"
               rounded
-              style="margin-top: 0.5rem; width: auto; color: #6B5070"
+              style="margin-top: 0.5rem; width: auto; color: #6b5070"
               ><v-icon large dark style="margin-right: 0.5rem">mdi-note-text</v-icon>
               ANALISIS
             </v-btn>

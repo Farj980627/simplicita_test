@@ -1,21 +1,20 @@
 <template>
   <v-app id="backGND">
+ 
     <!--Un navBar arriba de la pagina -->
     <div style="padding-top: 1.5rem">
       <v-app-bar app color="#86648D" dark>
-        <v-btn @click="flag = !flag" large color="#7F8EAD" style="margin-right: 0.5rem">
+        <v-btn @click="flag = false" large color="#7F8EAD" style="margin-right: 0.5rem">
           Vigentes</v-btn
         >
-        <v-btn @click="flag = !flag" large color="#9BA7BF">Historico</v-btn>
+        <v-btn @click="flag = true" large color="#9BA7BF">Historico</v-btn>
 
         <v-spacer />
-        <span>1/200 Oportunidades </span>
+        <span >1/200 Oportunidades </span>
         <v-spacer />
         <v-select v-model="itemMod" :items="itemList">
           <template v-slot:selection="{ item }">
-            <span style="color: white; text-align: center; width: 100%">{{
-              item
-            }}</span>
+            <span style="color: white; text-align: center; width: 100%">{{ item }}</span>
           </template>
         </v-select>
       </v-app-bar>
@@ -72,7 +71,7 @@ export default {
   // sin embargo esta comentado el ciclo en caso de querer extraer todos los resultados que arroja el API
   created: async function () {
     await fetch("https://simplicita.tk:8000/buscar/medicina")
-      .then((response) => response.json())
+      .then(async (response) => response.json())
       .then((data) => {
         for (var i = 0; i < 6; i++) {
           this.APIarray.push(data[i]);
