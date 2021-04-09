@@ -82,8 +82,10 @@
               "
               >Tiempo Restante: {{ tiempo_restante }}</b
             >
+             
           </div>
-          <br />
+         
+         <v-spacer/>
           <div>
             <v-btn
               color="#D9D9D9"
@@ -92,7 +94,7 @@
             >
               VER
             </v-btn>
-            <br />
+            
             <v-btn
               color="#D9D9D9"
               rounded
